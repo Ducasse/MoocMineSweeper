@@ -7,7 +7,7 @@ Class {
 		'size',
 		'text'
 	],
-	#category : #'MoocMineSweeper-Elements'
+	#category : #'MoocMineSweeper-Bloc'
 }
 
 { #category : #'class initialization' }
@@ -144,7 +144,7 @@ MoocBoxElement >> flag [
 	| pngElement aForm |
 	pngElement := BlElement new.
 	aForm := PNGReadWriter formFromFileNamed: 'flag.png'.
-	pngElement background: (BlMatchExtentImageBackground image: aForm).
+	pngElement background: aForm.
 
 	pngElement constraintsDo: [ :c |
 		c horizontal matchParent.

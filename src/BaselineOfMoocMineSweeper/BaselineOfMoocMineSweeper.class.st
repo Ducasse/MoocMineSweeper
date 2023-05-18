@@ -10,10 +10,15 @@ BaselineOfMoocMineSweeper >> baseline: spec [
 	spec
 		for: #common
 		do: [ 
-			self
-				definePackages: spec;
-				defineDependencies: spec;
-				defineGroups: spec ]
+			spec
+		baseline: 'Bloc'
+		with: [
+		spec repository: 'github://pharo-graphics/Bloc/src' ].
+			spec
+				package: 'MoocMineSweeper';
+				package: 'MoocMineSweeper-Tests' with: [ spec requires: #('MoocMineSweeper') ];
+				package: 'MoocMineSweeper-Bloc' with: [ spec requires: #('MoocMineSweeper' 'Bloc') ].
+		 ]
 ]
 
 { #category : #baseline }
@@ -26,19 +31,11 @@ BaselineOfMoocMineSweeper >> defineDependencies: spec [
 ]
 
 { #category : #baseline }
-BaselineOfMoocMineSweeper >> defineGroups: spec [
-	spec
-		group: 'core' with: #('MoocMineSweeper' 'MoocMineSweeper-Tests');
-		"should add the dependencies to the ui"
-		yourself
-]
-
-{ #category : #baseline }
 BaselineOfMoocMineSweeper >> definePackages: spec [
 
 	spec
-		  package: 'MoocMineSweeper' with: [ spec requires: #('Bloc') ];
-		  package: 'MoocMineSweeper-Tests' with: [ spec requires: #('MoocMineSweeper') ];
-			"should add the dependencies to the ui"
-		  yourself
+		package: 'MoocMineSweeper';
+		package: 'MoocMineSweeper-Tests' with: [ spec requires: #('MoocMineSweeper') ];
+		package: 'MoocMineSweeper-Bloc' with: [ spec requires: #('MoocMineSweeper' 'Bloc') ];
+		yourself
 ]

@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'game'
 	],
-	#category : #'MoocMineSweeper-Elements'
+	#category : #'MoocMineSweeper-Bloc'
 }
 
 { #category : #'test ressources' }
