@@ -8,7 +8,6 @@ Class {
 	#superclass : #BlElement,
 	#instVars : [
 		'box',
-		'field',
 		'size',
 		'text'
 	],
@@ -143,7 +142,7 @@ MoocBoxElement >> explosion [
 					 transformDo: [ :t |
 						 t translateBy: relativeFinalPosition.
 						 t rotateBy: 180 ];
-					 onFinishedDo: [ "Transcript show: anElement position ; cr; open."
+					 onFinishedDo: [
 						 anElement removeFromParent ];
 					 yourself) yourself ]
 ]
