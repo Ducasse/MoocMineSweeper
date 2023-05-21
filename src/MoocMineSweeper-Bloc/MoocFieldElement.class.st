@@ -76,7 +76,6 @@ MoocFieldElement >> game: aMField [
 MoocFieldElement >> initialize [
 
 	super initialize.
-"	self padding: (BlInsets all: 20)."
 	self background: (BlBackground paint: Color white darker).
 	self layout: (BlGridLayout horizontal cellSpacing: 5).
 	self constraintsDo: [ :aLayoutConstraints |

@@ -210,12 +210,10 @@ MoocBoxElement >> initialize [
 	self background: self backgroundPaint.
 	self geometry: (BlRoundedRectangleGeometry cornerRadius: 5).
 	self size: 150 @ 150.
-
 	self clipChildren: false.
 
-	text := BlTextElement new.
-	self addChild: text.
-	text text: '' asRopedText.
+	self initializeText.
+
 	self layout: BlFrameLayout new.
 
 	text constraintsDo: [ :c |
@@ -233,4 +231,12 @@ MoocBoxElement >> initialize [
 			ifFalse: [
 				self box isFlagged ifFalse: [
 					box clickIn: field at: posY at: posX ] ] ]
+]
+
+{ #category : #initialization }
+MoocBoxElement >> initializeText [
+
+	text := BlTextElement new.
+	self addChild: text.
+	text text: '' asRopedText.
 ]
