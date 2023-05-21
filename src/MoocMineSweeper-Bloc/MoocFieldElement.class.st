@@ -7,32 +7,13 @@ Class {
 	#category : #'MoocMineSweeper-Bloc'
 }
 
-{ #category : #'test ressources' }
-MoocFieldElement class >> matrixForField [  
-	|aGameElement space|
-	"Create the game model and the Bloc element."
-	aGameElement := self new game: MoocField matrixForField ; yourself.
-	
-	"The space represents the window"
-	space := BlSpace new.
-	space addChild: aGameElement. 
-
-	"Calculate the extent of the game board for the first time, to set it to the window."
-	space pulse.
-	space extent: aGameElement extent.
-
-	"Show the window"
-
-	space show. 
-]
-
 { #category : #execution }
-MoocFieldElement class >> matrixTest5x5 [
+MoocFieldElement class >> openWithModel: aModel [
 
 	| aGameElement space |
 	"Create the game model and the Bloc element."
 	aGameElement := self new
-		                game: MoocField matrixTest5x5;
+		                game: aModel;
 		                yourself.
 
 	"The space represents the window"
@@ -42,10 +23,23 @@ MoocFieldElement class >> matrixTest5x5 [
 	"Calculate the extent of the game board for the first time, to set it to the window."
 	space pulse.
 	space extent: aGameElement extent.
-
-	"Show the window"
 	space show.
 	^ space
+]
+
+{ #category : #'test ressources' }
+MoocFieldElement class >> withMatrixForField [
+
+	<script>
+	^ self openWithModel: MoocField matrixForField
+	
+]
+
+{ #category : #execution }
+MoocFieldElement class >> withMatrixTest5x5 [
+
+	<script>
+	^ self openWithModel: MoocField matrixTest5x5 
 ]
 
 { #category : #accessing }
