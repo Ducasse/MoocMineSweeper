@@ -80,15 +80,3 @@ MoocBox >> isMineBox [
 MoocBox >> isUnknownBox [
 	^ false
 ]
-
-{ #category : #accessing }
-MoocBox >> position [
-
-	^ position
-]
-
-{ #category : #accessing }
-MoocBox >> position: aPoint [
-
-	position := aPoint
-]

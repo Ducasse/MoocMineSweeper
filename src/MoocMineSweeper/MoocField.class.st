@@ -61,11 +61,6 @@ MoocField class >> matrixTest5x5 [
 	^ self matrix: ((Array2D rows: 5 columns: 5) collect: [ :e | MoocBox randomCase ])
 ]
 
-{ #category : #'instance creation' }
-MoocField class >> width: width height: height [
-	^ self matrix: ((Matrix rows: height columns: width) collect: [ :e | MoocBox randomCase ])
-]
-
 { #category : #visiting }
 MoocField >> accept: aMFieldVisitor [
 	^ aMFieldVisitor visitMField: self
@@ -228,8 +223,7 @@ MoocField >> matrix [
 MoocField >> matrix: anObject [
 
 	matrix := anObject.
-	matrix indicesDo: [ :line :column |
-		(matrix at: line at: column) position: line @ column ].
+	
 ]
 
 { #category : #'player api' }
@@ -259,7 +253,7 @@ MoocField >> playerLoose [
 
 	self boxesDoWithIndices: [ :aBox :i :j |
 		aBox announcer announce:
-			(MoocBoxClickAndReplaceAnnouncement replaceBy: (MoocClicked new position: i@j)) ]
+			(MoocBoxClickAndReplaceAnnouncement replaceBy: MoocClicked new) ]
 ]
 
 { #category : #accessing }
@@ -280,7 +274,7 @@ MoocField >> playerWin [
 	self boxesDoWithIndices: [ :aBox :i :j |
 		aBox announcer announce:
 			(MoocBoxClickAndReplaceAnnouncement replaceBy:
-				 (MoocClicked new position: i @ j)) ]
+				 (MoocClicked new)) ]
 ]
 
 { #category : #accessing }

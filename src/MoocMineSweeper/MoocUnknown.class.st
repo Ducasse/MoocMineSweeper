@@ -16,7 +16,7 @@ MoocUnknown >> accept: aMFieldVisitor [
 MoocUnknown >> clickIn: aMField at: x at: y [
 
 	| box |
-	box := MoocClicked new position: x@y.
+	box := MoocClicked new.
 	self announcer announce:
 		(MoocBoxClickAndReplaceAnnouncement replaceBy: box).
 	aMField replaceBoxAtRow: x column: y by: box.
