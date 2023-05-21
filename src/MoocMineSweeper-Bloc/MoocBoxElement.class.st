@@ -1,3 +1,8 @@
+"
+I represent a tile in a mine field. 
+I display either a bomb, or a number indicating the number of bombs around me.
+I start displaying an unknown status.
+"
 Class {
 	#name : #MoocBoxElement,
 	#superclass : #BlElement,

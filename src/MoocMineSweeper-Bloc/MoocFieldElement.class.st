@@ -1,3 +1,17 @@
+"
+I'm the board of the game. 
+For now you can launch the game doing
+
+```
+MoocFieldElement withMatrixForField
+```
+
+Or more generally 
+
+```
+MoocFieldElement openWithModel: anInstance of MoocField
+```
+"
 Class {
 	#name : #MoocFieldElement,
 	#superclass : #BlElement,
