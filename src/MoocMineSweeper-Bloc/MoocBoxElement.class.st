@@ -9,7 +9,8 @@ Class {
 	#instVars : [
 		'box',
 		'size',
-		'text'
+		'text',
+		'field'
 	],
 	#classVars : [
 		'icons'
